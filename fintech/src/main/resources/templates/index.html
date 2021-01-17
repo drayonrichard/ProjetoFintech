@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaft.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaft/layout">
+<head>
+	<!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>FINTECH SIMPLE PAYMENT</title>
+</head>
+<body>
+
+	<h1>Usuários Cadastrados</h1>
+	<h3><a class="waves-effect waves-light btn" href="/cadastro"><i class="material-icons left">add_circle</i>Cadastrar Usuário</a></h3>
+	<table class="container">
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Email</th>
+				<th>Telefone</th>
+				<th>CPF</th>
+				<th>Senha</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="cadastros : ${cadastros}">
+				<td><a th:href="@{/detalhesUsuario/{codigo}(codigo = ${cadastros.codigo}) }"><span th:text="${cadastros.nome}"></span></a></td>
+				<td><span th:text="${cadastros.email}"></span></td>
+				<td><span th:text="${cadastros.phone}"></span></td>
+				<td><span th:text="${cadastros.cpf}"></span></td>
+				<td><span th:text="${cadastros.password}"></span></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+
+</body>
+
+</html>

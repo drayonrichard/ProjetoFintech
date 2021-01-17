@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaft.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaft/layout">
+<head>
+	<!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>FINTECH SIMPLE PAYMENT</title>
+</head>
+
+<body>
+	<h1>Detalhes de Usuário</h1>
+	<h3><a class="waves-effect waves-light btn" href="/cadastros"><i class="material-icons left">group</i>Lista de cadastros</a></h3>
+	<div th:each="cadastro : ${cadastro}" class="container">
+		<div class="row">
+			<p>Nome completo: <span th:text="${cadastro.nome}"></span></p>
+			<p>CPF: <span th:text="${cadastro.cpf}"></span></p>
+			<p>Telefone: <span th:text="${cadastro.phone}"></span></p>
+			<p>E-mail: <span th:text="${cadastro.email}"></span></p>
+			<p>Senha: <span th:text="${cadastro.password}"></span></p>
+		</div>
+	</div>
+	
+    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+</body>
+</html>

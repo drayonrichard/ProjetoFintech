@@ -43,12 +43,12 @@
 		<!-- Pegar informações do cadastro no Back-End -->
 		<tbody>
 			<tr th:each="cadastro : ${cadastros}">
-				<td><a th:href="@{(#mvc.url('CR#listaCadastros').arg(0, cadastro.codigo).build())}"><span th:text="${cadastro.nome}"></span></a></td>
+				<td><a th:href="@{/detalhesUsuario/{codigo}(codigo = ${cadastro.codigo}) }"><span th:text="${cadastro.nome}"></span></a></td>
 				<td><span th:text="${cadastro.email}"></span></td>
 				<td><span th:text="${cadastro.phone}"></span></td>
 				<td><span th:text="${cadastro.cpf}"></span></td>
 				<td><span th:text="${cadastro.password}"></span></td>
-				<td><a th:href="{(#mvc.url('CR#deletarUsuario').arg(0, cadastro.codigo).build())}" class="btn"></a></td>
+				<td><a class="waves-effect waves-light btn-small" th:href="@{/{codigo}(codigo = ${cadastro.codigo}) }"><i class="material-icons">delete</i></a></td>
 			</tr>
 		</tbody>
 	</table>

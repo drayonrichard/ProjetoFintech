@@ -69,8 +69,8 @@ public class UserController {
 	 * Faz uma busca pelo código repassado, salva este código e passa o objeto cr com método delete para excluir o dado relacionado ao código
 	 * e por fim retorna a página /cadastros para a tela.
 	 */
-	@RequestMapping("/deletar")
-	public String deletarUsuario(long codigo) {
+	@RequestMapping("/{codigo}")
+	public String deletarUsuario(@PathVariable(value="codigo") long codigo) {
 		Cadastro cadastro = cr.findByCodigo(codigo);
 		cr.delete(cadastro);
 		return "redirect:/cadastros";

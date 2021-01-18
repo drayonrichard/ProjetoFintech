@@ -9,6 +9,9 @@ import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
+/*
+ * Classe de configuração ao acesso ao banco de dados local
+ */
 @Configuration
 public class DataConfiguration {
 
@@ -22,6 +25,9 @@ public class DataConfiguration {
 		return datasource;
 	}
 	
+	/*
+	 * Configuração do JPA de tratamento do banco de dados, reforça a compatibilidade com o banco
+	 */
 	@Bean
 	public JpaVendorAdapter jpaVendorAdapter() {
 		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();

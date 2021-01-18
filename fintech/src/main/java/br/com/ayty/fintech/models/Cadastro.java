@@ -6,22 +6,29 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
+/*
+ * Criar uma entidade chamada cadastro
+ */
 @Entity
 public class Cadastro implements Serializable {
 
+	/*
+	 * Gera um número de serial
+	 */
 	private static final long serialVersionUID = 1L;
 	
+	/*
+	 * Passa para váriavel código os atributos de id e o serial.
+	 */
 	@Id
-	@NotEmpty
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private long codigo;
 	
-	@NotNull (message = "Campo não estar vazio")
-	@Size(min=2, max=100, message="Tem de ter pelo menos 2 letras") 
+
+	/*
+	 * Cria as váriaveis relacionadas ao cadastro e dá o get e set delas.
+	 */
 	private String nome;
 	private String password;
 	private String cpf;
